@@ -21,6 +21,7 @@ app.set 'view engine', 'jade'
 
 # Routes
 app.get  '/', routes.index
+app.get  '/browse', routes.index
 app.post '/search', routes.search
 app.get  '/:id', routes.show
 
