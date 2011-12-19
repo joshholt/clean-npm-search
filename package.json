@@ -5,7 +5,7 @@
   , "dependencies": {
       "express": "*"
     , "jade": "*"
-		, "connect-assets": "*"
+		, "connect-assets": "2.1.5"
 		, "coffee-script": "*"
 		, "stylus": "*"
 		, "stepc": "*"
