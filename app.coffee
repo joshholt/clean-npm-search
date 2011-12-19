@@ -25,4 +25,4 @@ app.post '/search', routes.search
 app.get  '/:id', routes.show
 
 # Bind to a port
-app.listen 1337, -> console.log "Listening on port %d in %s mode", app.address().port, app.settings.env
+app.listen process.env.PORT or 1337, -> console.log "Listening on port %d in %s mode", app.address().port, app.settings.env
