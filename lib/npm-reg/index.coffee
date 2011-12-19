@@ -15,7 +15,7 @@ module.exports =
 	search: (req, cb) ->
 		step.async(
 			() ->
-				search_term = req.body.search
+				search_term = req.body.search.replace(/\s/g, "%20")
 				options =
 					uri: "http://search.npmjs.org/_list/search/search?startkey=%22#{search_term}%22&endkey=%22#{search_term}ZZZZZZZZZZZZZZZZZZZ%22&limit=25"
 					method: "GET"
