@@ -1,0 +1,28 @@
+mixin show_package(package)
+	.row
+		.span10
+			h1 #{package._id.toUpperCase()}
+		.span6
+			h1: a.pull-right(href="#{package.authorLink}") #{package.authorName}
+	.row
+		.span8
+			p #{package.description}
+		.span4
+			if package.hasTime
+				p.pull-right Latest Update &raquo; #{package.lastUpdated}
+			else
+				&nbsp;
+		.span2
+			if package.hasHomePage
+				a.pull-right(href="#{package.home_page}") Project Home &raquo;
+			else
+				&nbsp;
+		.span2
+			if package.hasGitRepo
+				a.pull-right(href="#{package.gitUrl}") Repo &raquo;
+	.row.latest
+		.span6
+			h3 Versions
+			ul.unstyled
+				each version in Object.keys(package.versions).reverse()
+					li: p #{version}

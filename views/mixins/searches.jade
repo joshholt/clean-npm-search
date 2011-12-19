@@ -1,0 +1,11 @@
+mixin searches(data)
+	dl.latest
+		each package in data.packages
+			dt
+				.row
+					.span4
+						#{package.id || package.value.name}
+					.span10
+						#{package.package_date || package.value.description}
+					.span2
+						a.btn(class="pull-right primary small", href="/#{package.id || package.value.name}") Info &raquo;

@@ -1,0 +1,38 @@
+!!!
+html
+  head
+    title= title
+    != css('bootstrap')
+    != css('app')
+    != js('app')
+  body
+    .topbar
+      .fill
+        .container
+          a.brand(href="/") NPM Packages
+          ul.nav
+            li.active: a(href="/") Search
+            li: a(href="/browse") Browse
+    
+    .container
+      .hero-unit
+        .row
+          .span5
+            img(src="/images/npm.png", width="260px", height="101.5px")
+          .span8
+            h2 Package search...
+            form(action="/search", method="POST")
+              input(type="hidden", name="_csrf", value="#{token}")
+              input.span6(type="text", placeholder="Search...", name="search", id="search")
+              &nbsp;
+              button.btn(class="primary", type="submit") Search &raquo;
+      
+      .row
+        .span16
+          h2 #{title}
+          != body
+      
+      footer
+        p &copy; MRD 2011-2012
+    
+    
